@@ -32,7 +32,7 @@ public class WelcomeControllerTest {
 
     @Test
     public void testIndex() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/welcome").accept(MediaType.TEXT_HTML))
+        mvc.perform(MockMvcRequestBuilders.get("/spring-boot-jar-demo/welcome").accept(MediaType.TEXT_HTML))
                 .andExpect(status().isOk());
     }
 }
