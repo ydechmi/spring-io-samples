@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class WelcomeController {
 
-    @RequestMapping("/spring-boot-jar-demo/welcome")
+    @RequestMapping("/spring-boot-demo/welcome")
     public String welcome() {
 
         return "/welcome.html";

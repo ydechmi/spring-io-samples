@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>spring-boot-jar-demo</module>
+        <module>spring-boot-welcome-demo</module>
     </modules>
     <dependencyManagement>
         <dependencies>

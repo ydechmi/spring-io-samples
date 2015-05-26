@@ -10,16 +10,16 @@
 	</parent>
 
 	<groupId>com.yd.spring.boot</groupId>
-	<artifactId>spring-boot-jar-demo</artifactId>
+	<artifactId>spring-boot-welcome-demo</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-boot-jar-demo</name>
+	<name>spring-boot-welcome-demo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<start-class>com.yd.demo.SpringBootJarDemoApplication</start-class>
+		<start-class>com.yd.demo.SpringBootWelcomeDemoApplication</start-class>
 		<java.version>1.8</java.version>
 	</properties>
 
@@ -56,7 +56,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.yd.demo.SpringBootJarDemoApplication</mainClass>
+							<mainClass>com.yd.demo.SpringBootWelcomeDemoApplication</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
