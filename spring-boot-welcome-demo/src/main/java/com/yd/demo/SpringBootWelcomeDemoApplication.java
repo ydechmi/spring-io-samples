@@ -1,12 +1,3 @@
-package com.yd.demo;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-
-import java.util.Arrays;
-
-
 /*
  * Copyright 2012-2015  the original author or authors
  *
@@ -22,6 +13,15 @@ import java.util.Arrays;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.yd.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import java.util.Arrays;
+
 
 @SpringBootApplication
 public class SpringBootWelcomeDemoApplication {

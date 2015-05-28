@@ -1,12 +1,3 @@
-package com.yd.demo;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-
 /*
  * Copyright 2012-2015  the original author or authors
  *
@@ -22,6 +13,15 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.yd.demo;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SpringBootWelcomeDemoApplication.class)

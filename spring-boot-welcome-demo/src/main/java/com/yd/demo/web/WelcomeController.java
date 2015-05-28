@@ -1,8 +1,3 @@
-package com.yd.demo.web;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 /*
  * Copyright 2012-2015  the original author or authors
  *
@@ -18,6 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.yd.demo.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 
 @Controller
 public class WelcomeController {
