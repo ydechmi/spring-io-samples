@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="myTargetConnectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean">
+              <property name="jndiName" value="jms/QueueConnectionFactory"/>
+              <!--<property name="jndiTemplate" ref="jndiTemplate"/>-->
+       </bean>
+       <bean id="destination" class="org.springframework.jndi.JndiObjectFactoryBean">
+              <property name="jndiName" value="jms/HelloWorldQueue"/>
+             <!-- <property name="jndiTemplate" ref="jndiTemplate"/>-->
+       </bean>
+
+       <bean id="myConnectionFactory" class="org.springframework.jms.connection.UserCredentialsConnectionFactoryAdapter">
+              <property name="targetConnectionFactory" ref="myTargetConnectionFactory"/>
+              <property name="username" value="sqli"/>
+              <property name="password" value="sqli1234"/>
+       </bean>
+       <bean id="myConnectionFactory2" class="com.yd.jms.listener.UserCredentialsConnectionFactoryAdapter">
+              <property name="jndiTemplate" ref="jndiTemplate"/>
+              <property name="targetConnectionFactory" ref="myTargetConnectionFactory"/>
+              <property name="username" value="sqli"/>
+              <property name="password" value="sqli1234"/>
+       </bean>
+       <bean id="jndiTemplate" class="org.springframework.jndi.JndiTemplate">
+              <property name="environment">
+                     <props>
+                            <prop key="java.naming.factory.initial">weblogic.jndi.WLInitialContextFactory</prop>
+                            <prop key="java.naming.provider.url">t3://localhost:7001</prop>
+                            <prop key="java.naming.security.principal">sqli</prop>
+                            <prop key="java.naming.security.credentials">sqli1234</prop>
+                     </props>
+              </property>
+       </bean>
+       <bean id="myJmsListener" class="com.yd.jms.listener.MyJmsListener"/>
+       <bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+              <property name="connectionFactory" ref="myConnectionFactory2"/>
+              <property name="destination" ref="destination"/>
+              <property name="messageListener" ref="myJmsListener" />
+       </bean>
+</beans>
