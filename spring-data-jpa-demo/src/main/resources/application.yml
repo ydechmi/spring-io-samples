@@ -1,0 +1,34 @@
+spring.profiles: HSQLDB
+spring:
+  application:
+    name: spring-data-jpa-demo DEV
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    continue-on-error: true
+    url: jdbc:hsqldb:mem:DemoDB
+
+---
+
+spring.profiles: MYSQL
+spring:
+  application:
+    name: spring-data-jpa-demo PROD
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    continue-on-error: true
+    url: jdbc:mysql://192.168.99.100:32768/TEST_DB
+    driver-class-name: com.mysql.jdbc.Driver
+    username: TEST
+    password: TEST
+
+---
+
+
+spring:
+  profiles:
+    active: HSQLDB
