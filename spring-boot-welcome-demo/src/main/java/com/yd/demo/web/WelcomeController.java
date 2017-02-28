@@ -16,16 +16,20 @@
 
 package com.yd.demo.web;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
 public class WelcomeController {
+    private static final Logger logger = LogManager
+            .getLogger(WelcomeController.class);
 
     @RequestMapping("/spring-boot-demo/welcome")
     public String welcome() {
-
+        logger.info("hello world");
         return "/welcome.html";
     }
 }
